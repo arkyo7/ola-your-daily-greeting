@@ -56,8 +56,8 @@ export function Header() {
         className={cn(
           "border-b transition-colors duration-500",
           scrolled
-            ? "border-charcoal/5 bg-warm-white/80 text-taupe"
-            : "border-warm-white/15 bg-charcoal/25 text-warm-white/85",
+            ? "border-charcoal/5 bg-warm-white/85 text-taupe"
+            : "border-charcoal/5 bg-ivory/70 text-taupe",
         )}
       >
         <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-5 py-2 lg:px-10">
@@ -74,7 +74,7 @@ export function Header() {
             >
               Instagram
             </a>
-            <LanguageSwitcher tone={scrolled ? "dark" : "light"} />
+            <LanguageSwitcher tone="dark" />
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@ export function Header() {
           "transition-all duration-500",
           scrolled
             ? "border-b border-charcoal/8 bg-warm-white/90 shadow-[0_1px_20px_rgba(58,46,42,0.06)] backdrop-blur-md"
-            : "bg-transparent",
+            : "bg-ivory/60 backdrop-blur-sm",
         )}
       >
         <div
@@ -98,7 +98,7 @@ export function Header() {
             <span
               className={cn(
                 "block font-serif text-[1.55rem] tracking-[0.02em] transition-colors",
-                scrolled ? "text-charcoal" : "text-warm-white",
+                "text-charcoal",
               )}
             >
               Tallita Cumi
@@ -106,7 +106,7 @@ export function Header() {
             <span
               className={cn(
                 "mt-1 block font-sans text-[9px] uppercase tracking-[0.32em] transition-colors",
-                scrolled ? "text-taupe" : "text-warm-white/70",
+                "text-taupe",
               )}
             >
               Bridal Hair &amp; Makeup
@@ -123,9 +123,7 @@ export function Header() {
                 href={`#${s.id}`}
                 className={cn(
                   "font-sans text-[12px] uppercase tracking-[0.16em] transition-colors",
-                  scrolled
-                    ? "text-taupe hover:text-charcoal"
-                    : "text-warm-white/85 hover:text-warm-white",
+                  "text-taupe hover:text-charcoal",
                 )}
               >
                 {t.nav[s.key]}
@@ -135,9 +133,7 @@ export function Header() {
               href="#contato"
               className={cn(
                 "inline-flex min-h-11 items-center rounded-[3px] border px-5 font-sans text-[12px] uppercase tracking-[0.16em] transition-all duration-300 hover:-translate-y-px active:scale-[0.98]",
-                scrolled
-                  ? "border-cocoa bg-cocoa text-warm-white hover:bg-charcoal"
-                  : "border-warm-white/70 text-warm-white hover:border-muted-gold hover:text-muted-gold",
+                "border-cocoa bg-cocoa text-warm-white hover:bg-charcoal",
               )}
             >
               {t.nav.cta}
@@ -153,7 +149,7 @@ export function Header() {
             aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
             className={cn(
               "inline-flex min-h-11 min-w-11 items-center justify-center rounded-[3px] transition-colors lg:hidden",
-              scrolled ? "text-charcoal" : "text-warm-white",
+              "text-charcoal",
             )}
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
