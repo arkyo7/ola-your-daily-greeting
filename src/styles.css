@@ -59,9 +59,30 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Tallita Cumi — paleta editorial */
+  --color-ivory: var(--ivory);
+  --color-warm-white: var(--warm-white);
+  --color-soft-blush: var(--soft-blush);
+  --color-taupe: var(--taupe);
+  --color-muted-gold: var(--muted-gold);
+  --color-cocoa: var(--cocoa);
+  --color-charcoal: var(--charcoal);
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
+  /* Tallita Cumi — paleta editorial */
+  --ivory: oklch(0.966 0.008 73.7);
+  --warm-white: oklch(0.995 0.003 48.7);
+  --soft-blush: oklch(0.806 0.039 32);
+  --taupe: oklch(0.584 0.028 49.5);
+  --muted-gold: oklch(0.687 0.086 80.7);
+  --cocoa: oklch(0.313 0.019 39.3);
+  --charcoal: oklch(0.235 0.007 48.4);
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
