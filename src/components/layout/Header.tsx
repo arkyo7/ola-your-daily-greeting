@@ -156,7 +156,7 @@ export function Header() {
               scrolled ? "text-charcoal" : "text-warm-white",
             )}
           >
-            {open ? <Menu className="size-5" /> : <Menu className="size-5" />}
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </div>
       </div>
