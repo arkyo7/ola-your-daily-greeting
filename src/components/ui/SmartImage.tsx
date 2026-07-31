@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 type SmartImageProps = {
@@ -27,7 +27,18 @@ export function SmartImage({
   sizes,
 }: SmartImageProps) {
   const [failed, setFailed] = useState(false);
+  const ref = useRef<HTMLImageElement>(null);
   const fileName = src.split("/").pop();
+
+  useEffect(() => {
+    setFailed(false);
+  }, [src]);
+
+  useEffect(() => {
+    const el = ref.current;
+    // Cobre o caso em que a imagem falhou antes da hidratação (SSR).
+    if (el && el.complete && el.naturalWidth === 0) setFailed(true);
+  });
 
   return (
     <div
@@ -46,6 +57,7 @@ export function SmartImage({
         </div>
       ) : (
         <img
+          ref={ref}
           src={src}
           alt={alt}
           loading={priority ? "eager" : "lazy"}
