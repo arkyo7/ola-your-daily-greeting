@@ -37,7 +37,7 @@ export function SmartImage({
       {failed ? (
         <div
           aria-hidden="true"
-          className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[linear-gradient(160deg,var(--color-ivory),var(--color-soft-blush)/40,var(--color-cocoa)/10)] px-4 text-center"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-ivory via-soft-blush/25 to-cocoa/10 px-4 text-center"
         >
           <span className="h-px w-10 bg-muted-gold/60" />
           <span className="font-sans text-[10px] uppercase tracking-[0.28em] text-taupe">

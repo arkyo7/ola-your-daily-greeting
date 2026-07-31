@@ -8,7 +8,7 @@ type RevealProps = {
   delay?: number;
   /** stagger direct children */
   stagger?: boolean;
-  as?: "div" | "section" | "article" | "li" | "ul" | "figure" | "header";
+  as?: "div" | "section" | "article" | "li" | "ul" | "ol" | "figure" | "header";
 };
 
 const EASE = [0.22, 1, 0.36, 1] as const;
