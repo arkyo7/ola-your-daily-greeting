@@ -51,109 +51,64 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* Barra superior */}
       <div
         className={cn(
-          "border-b transition-colors duration-500",
+          "border-b transition-all duration-500",
           scrolled
-            ? "border-charcoal/5 bg-warm-white/85 text-taupe"
-            : "border-charcoal/5 bg-ivory/70 text-taupe",
-        )}
-      >
-        <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-5 py-2 lg:px-10">
-          <p className="truncate font-sans text-[10px] uppercase tracking-[0.22em]">
-            {t.topbar}
-          </p>
-          <div className="hidden shrink-0 items-center gap-5 md:flex">
-            <a
-              href={SITE_CONFIG.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t.nav.instagram}
-              className="font-sans text-[10px] uppercase tracking-[0.22em] transition-colors hover:text-muted-gold"
-            >
-              Instagram
-            </a>
-            <LanguageSwitcher tone="dark" />
-          </div>
-        </div>
-      </div>
-
-      {/* Cabeçalho */}
-      <div
-        className={cn(
-          "transition-all duration-500",
-          scrolled
-            ? "border-b border-charcoal/8 bg-warm-white/90 shadow-[0_1px_20px_rgba(58,46,42,0.06)] backdrop-blur-md"
-            : "bg-ivory/60 backdrop-blur-sm",
+            ? "border-charcoal/8 bg-warm-white/92 shadow-[0_1px_20px_rgba(58,46,42,0.06)] backdrop-blur-md"
+            : "border-transparent bg-ivory/78 backdrop-blur-sm",
         )}
       >
         <div
           className={cn(
-            "mx-auto flex max-w-[1240px] items-center justify-between gap-6 px-5 transition-all duration-500 lg:px-10",
-            scrolled ? "py-3" : "py-5",
+            "mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-5 transition-all duration-500 lg:px-10",
+            scrolled ? "py-3" : "py-4 lg:py-5",
           )}
         >
-          <a href="#inicio" className="min-w-0 leading-none">
-            <span
-              className={cn(
-                "block font-serif text-[1.55rem] tracking-[0.02em] transition-colors",
-                "text-charcoal",
-              )}
-            >
+          <a href="#inicio" className="min-w-0 shrink-0 leading-none">
+            <span className="block font-serif text-[1.55rem] tracking-[0.02em] text-charcoal">
               Tallita Cumi
             </span>
-            <span
-              className={cn(
-                "mt-1 block font-sans text-[9px] uppercase tracking-[0.32em] transition-colors",
-                "text-taupe",
-              )}
-            >
+            <span className="mt-1 block font-sans text-[9px] uppercase tracking-[0.32em] text-taupe">
               Bridal Hair &amp; Makeup
             </span>
           </a>
 
-          <nav
-            aria-label={t.nav.home}
-            className="hidden items-center gap-7 lg:flex"
-          >
-            {SECTIONS.map((s) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                className={cn(
-                  "font-sans text-[12px] uppercase tracking-[0.16em] transition-colors",
-                  "text-taupe hover:text-charcoal",
-                )}
-              >
-                {t.nav[s.key]}
-              </a>
-            ))}
+          <div className="hidden items-center gap-4 lg:flex">
+            <nav aria-label={t.nav.home} className="flex items-center gap-5 xl:gap-6">
+              {SECTIONS.map((s) => (
+                <a
+                  key={s.id}
+                  href={"#" + s.id}
+                  className="font-sans text-[11px] uppercase tracking-[0.14em] text-taupe transition-colors hover:text-charcoal"
+                >
+                  {t.nav[s.key]}
+                </a>
+              ))}
+            </nav>
+            <LanguageSwitcher />
             <a
               href="#contato"
-              className={cn(
-                "inline-flex min-h-11 items-center rounded-[3px] border px-5 font-sans text-[12px] uppercase tracking-[0.16em] transition-all duration-300 hover:-translate-y-px active:scale-[0.98]",
-                "border-cocoa bg-cocoa text-warm-white hover:bg-charcoal",
-              )}
+              className="inline-flex min-h-11 items-center rounded-[3px] border border-cocoa bg-cocoa px-5 font-sans text-[11px] uppercase tracking-[0.14em] text-warm-white transition-all duration-300 hover:-translate-y-px hover:bg-charcoal active:scale-[0.98]"
             >
               {t.nav.cta}
             </a>
-          </nav>
+          </div>
 
-          <button
-            ref={buttonRef}
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
-            className={cn(
-              "inline-flex min-h-11 min-w-11 items-center justify-center rounded-[3px] transition-colors lg:hidden",
-              "text-charcoal",
-            )}
-          >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
+          <div className="flex items-center gap-1 lg:hidden">
+            <LanguageSwitcher />
+            <button
+              ref={buttonRef}
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-[3px] text-charcoal transition-colors hover:bg-cocoa/5"
+            >
+              {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -163,21 +118,11 @@ export function Header() {
           ref={panelRef}
           className="border-b border-charcoal/8 bg-warm-white px-5 pb-7 pt-3 shadow-lg lg:hidden"
         >
-          <div className="flex justify-end">
-            <button
-              type="button"
-              onClick={() => setOpen(false)}
-              aria-label={t.nav.closeMenu}
-              className="inline-flex min-h-11 min-w-11 items-center justify-center text-taupe"
-            >
-              <X className="size-5" />
-            </button>
-          </div>
           <nav aria-label={t.nav.home} className="flex flex-col">
             {SECTIONS.map((s) => (
               <a
                 key={s.id}
-                href={`#${s.id}`}
+                href={"#" + s.id}
                 onClick={() => setOpen(false)}
                 className="border-b border-charcoal/5 py-3 font-sans text-sm uppercase tracking-[0.16em] text-charcoal"
               >
@@ -185,22 +130,19 @@ export function Header() {
               </a>
             ))}
           </nav>
-          <div className="mt-6 flex items-center justify-between">
-            <a
-              href={SITE_CONFIG.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t.nav.instagram}
-              className="inline-flex min-h-11 items-center gap-2 font-sans text-[11px] uppercase tracking-[0.2em] text-taupe"
-            >
-              <Instagram className="size-4" aria-hidden="true" /> Instagram
-            </a>
-            <LanguageSwitcher />
-          </div>
+          <a
+            href={SITE_CONFIG.instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t.nav.instagram}
+            className="mt-5 inline-flex min-h-11 items-center gap-2 font-sans text-[11px] uppercase tracking-[0.2em] text-taupe"
+          >
+            <Instagram className="size-4" aria-hidden="true" /> Instagram
+          </a>
           <a
             href="#contato"
             onClick={() => setOpen(false)}
-            className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-[3px] bg-cocoa px-5 font-sans text-[12px] uppercase tracking-[0.16em] text-warm-white"
+            className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-[3px] bg-cocoa px-5 font-sans text-[12px] uppercase tracking-[0.16em] text-warm-white"
           >
             {t.nav.cta}
           </a>
