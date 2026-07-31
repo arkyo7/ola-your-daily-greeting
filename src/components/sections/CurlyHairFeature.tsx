@@ -11,7 +11,7 @@ export function CurlyHairFeature() {
       <div className="grid lg:grid-cols-2">
         <Reveal>
           <SmartImage
-            src="/images/03-penteado-noiva-cacheada.jpg"
+            src="/images/03-penteado-noiva-cacheada.webp"
             alt={t.curly.alt}
             ratio="4 / 5"
             className="h-full w-full"

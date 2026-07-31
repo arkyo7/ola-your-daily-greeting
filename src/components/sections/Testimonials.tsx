@@ -48,7 +48,7 @@ export function Testimonials() {
 
           <Reveal>
             <SmartImage
-              src="/images/08-noiva-emocao.jpg"
+              src="/images/08-noiva-emocao.webp"
               alt={t.testimonials.alt}
               ratio="3 / 4"
               className="rounded-[6px]"

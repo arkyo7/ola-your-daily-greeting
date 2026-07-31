@@ -21,7 +21,10 @@ export function ServiceArea() {
                   key={item}
                   className="flex items-start gap-3 border-t border-charcoal/10 pt-3 font-sans text-sm text-taupe"
                 >
-                  <span className="mt-2 h-px w-4 shrink-0 bg-muted-gold" aria-hidden="true" />
+                  <span
+                    className="mt-[0.55rem] size-1.5 shrink-0 rounded-full border border-muted-gold bg-muted-gold/25"
+                    aria-hidden="true"
+                  />
                   {item}
                 </li>
               ))}

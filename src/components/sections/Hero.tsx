@@ -21,7 +21,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative bg-ivory pb-16 pt-36 lg:pb-24 lg:pt-44"
+      className="relative bg-ivory pb-16 pt-28 lg:pb-24 lg:pt-36"
       aria-labelledby="hero-title"
     >
       <div className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 lg:grid-cols-[45fr_55fr] lg:gap-16 lg:px-10">
@@ -49,22 +49,16 @@ export function Hero() {
             {t.hero.subtitle}
           </motion.p>
 
-          <motion.div {...fade(0.42)} className="mt-9 flex flex-wrap gap-3">
+          <motion.div {...fade(0.42)} className="mt-9">
             <a
-              href="#contato"
+              href="#portfolio"
               className="group inline-flex min-h-11 items-center gap-2 rounded-[3px] bg-cocoa px-7 font-sans text-[12px] uppercase tracking-[0.16em] text-warm-white transition-all duration-300 hover:-translate-y-px hover:bg-charcoal hover:shadow-[0_10px_24px_-14px_rgba(33,29,27,0.8)] active:scale-[0.98]"
             >
-              {t.hero.primary}
+              {t.hero.secondary}
               <ArrowRight
                 className="size-4 transition-transform duration-300 group-hover:translate-x-[3px]"
                 aria-hidden="true"
               />
-            </a>
-            <a
-              href="#portfolio"
-              className="inline-flex min-h-11 items-center rounded-[3px] border border-cocoa/25 px-7 font-sans text-[12px] uppercase tracking-[0.16em] text-cocoa transition-all duration-300 hover:-translate-y-px hover:border-muted-gold hover:text-charcoal active:scale-[0.98]"
-            >
-              {t.hero.secondary}
             </a>
           </motion.div>
 
@@ -84,7 +78,7 @@ export function Hero() {
             transition={{ duration: 0.75, ease: EASE, delay: 0.1 }}
           >
             <SmartImage
-              src="/images/02-noiva-editorial.jpg"
+              src="/images/02-noiva-editorial.webp"
               alt={t.hero.altMain}
               ratio="4 / 5"
               priority
@@ -100,7 +94,7 @@ export function Hero() {
             className="absolute -bottom-10 left-0 w-[38%] max-w-[190px] border-[6px] border-ivory sm:-left-8 lg:-left-14"
           >
             <SmartImage
-              src="/images/01-retrato-tallita.jpg"
+              src="/images/01-retrato-tallita.webp"
               alt={t.hero.altSecond}
               ratio="3 / 4"
               className="rounded-[4px]"

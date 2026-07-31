@@ -12,7 +12,7 @@ export function About() {
         <Reveal className="lg:pt-10">
           <div className="relative">
             <SmartImage
-              src="/images/01-retrato-tallita.jpg"
+              src="/images/01-retrato-tallita.webp"
               alt={t.about.alt}
               ratio="4 / 5"
               className="rounded-[6px]"
